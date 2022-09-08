@@ -7,8 +7,8 @@ int main(void)
         primes[i] = 1;
 
     for (int i = 2; i * i <= 100; i++)
-        for (int j = i * i; j <= 100; j += i)
-            if (primes[j])
+        if (primes[i])
+            for (int j = i * i; j <= 100; j += i)
                 primes[j] = 0;
     
     for (int i = 2; i <= 100; i++)
