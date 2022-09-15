@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-#define PI 3.14159
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 int main(void)
 {
@@ -8,7 +9,7 @@ int main(void)
     printf("Enter the radius: ");
     scanf("%f", &radius);
 
-    area = PI * radius * radius;
+    area = M_PI * radius * radius;
     printf("Area of circle is %.2f having the radius %.2f", area, radius);
 
     return 0;

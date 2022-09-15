@@ -6,7 +6,7 @@ int main(void)
     printf("Enter time in HH:MM format: ");
     scanf("%d:%d", &hours, &minutes);
 
-    printf("%d hours and %d minutes", hours, minutes);
+    printf("%d hours and %d minutes\n", hours, minutes);
 
     return 0;
 }
