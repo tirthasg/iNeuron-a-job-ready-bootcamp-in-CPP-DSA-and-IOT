@@ -6,28 +6,31 @@ int main(void)
     printf("Enter an integer: ");
     scanf("%d", &N);
 
-    int i = 1, j;
-    while (i <= N) {
-        j = 1;
-        while (j <= N - i + 1) {
-            printf("%d", j);
-            j++;
+    int nst = N - 1, nsp = -1, val;
+    for (int i = 1; i <= N; i++) {
+        val = 1;
+        for (int j = 1; j <= nst; j++) {
+            printf("%d", val);
+            val++;
         }
 
-        j = 1;
-        while (j <= 2 * (i - 2) + 1) {
+        if (i == 1) {
+            printf("%d", val);
+        }
+
+        for (int j = 1; j <= nsp; j++)
             printf(" ");
-            j++;
+        
+        val--;
+        for (int j = 1; j <= nst; j++) {
+            printf("%d", val);
+            val--;
         }
 
-        j = (i == 1) ? N - 1 : N - i + 1;
-        while (j > 0) {
-            printf("%d", j);
-            j--;
-        }
         printf("\n");
-
-        i++;
+        if (i != 1)
+            nst--;
+        nsp += 2;
     }
 
     return 0;

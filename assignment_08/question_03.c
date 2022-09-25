@@ -6,17 +6,11 @@ int main(void)
     printf("Enter an integer: ");
     scanf("%d", &N);
 
-    int i = 1, j;
-    while (i <= N) {
-        j = 1;
-        while (j <= N - i + 1) {
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= N - i + 1; j++)
             printf("*");
-            j++;
-        }
         printf("\n");
-
-        i++;
     }
-
+        
     return 0;
 }

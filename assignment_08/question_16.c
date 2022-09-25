@@ -6,25 +6,25 @@ int main(void)
     printf("Enter an integer: ");
     scanf("%d", &N);
 
-    int i = 1, j;
-    while (i <= N) {
-        j = 1;
-        while (j <= N - i) {
+    int nsp1 = N - 1, nsp2 = -1;
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= nsp1; j++)
             printf(" ");
-            j++;
-        }
 
-        j = 1;
-        while (j <= 2 * i - 1) {
-            if (j == 1 || j == 2 * i - 1 || i == N) 
+        printf("*");
+
+        for (int j = 1; j <= nsp2; j++)
+            if (i == N)
                 printf("*");
             else 
                 printf(" ");
-            j++;
-        }
-        printf("\n");
 
-        i++;
+        if (i != 1)
+            printf("*");
+        
+        printf("\n");
+        nsp1--;
+        nsp2 += 2;
     }
 
     return 0;
